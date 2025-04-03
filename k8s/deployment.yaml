@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uptimekuma
+  namespace: uptimekuma
+  labels:
+    app: uptimekuma
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: uptimekuma
+  template:
+    metadata:
+      labels:
+        app: uptimekuma
+    spec:
+      containers:
+        - name: uptimekuma
+          image: louislam/uptime-kuma:latest
+          ports:
+            - containerPort: 3001
+          volumeMounts:
+            - mountPath: /app/data
+              name: uptimekuma-storage
+      volumes:
+        - name: uptimekuma-storage
+          persistentVolumeClaim:
+            claimName: uptimekuma-pvc
