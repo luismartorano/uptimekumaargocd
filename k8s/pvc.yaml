@@ -8,6 +8,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1ßßßßGi
-  storageClassName: manual  # <--- Deve ser igual ao do PV
-  volumeName: uptimekuma-pv  # <--- Nome do PV correto
+      storage: 1Gi  # Certifique-se de que este valor segue o formato correto
+  volumeName: uptimekuma-pv
+  storageClassName: manual
+
