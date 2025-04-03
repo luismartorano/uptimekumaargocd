@@ -78,7 +78,7 @@ metadata:
 spec:
   ingressClassName: ngrok
   rules:
-    - host: uptimekuma.settling-wolf-explicitly.ngrok-free.app
+    - host: settling-wolf-explicitly.ngrok-free.app
       http:
         paths:
           - path: /
