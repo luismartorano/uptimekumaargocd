@@ -1,24 +1,4 @@
 ---
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: uptimekuma
-spec:
-  project: default
-  source:
-    repoURL: git@github.com:luismartorano/uptimekumaargocd.git
-    targetRevision: HEAD
-    path: .
-  destination: 
-    server: https://kubernetes.default.svc
-    namespace: default
-  syncPolicy:
-    syncOptions:
-    - CreateNamespace=true
-    automated:
-      selfHeal: true
-      prune: true
----
 
 apiVersion: v1
 kind: PersistentVolume
