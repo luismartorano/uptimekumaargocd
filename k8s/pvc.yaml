@@ -9,5 +9,5 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  volumeName: uptimekuma-pv
-  storageClassName: manual
+  storageClassName: manual  # <--- Deve ser igual ao do PV
+  volumeName: uptimekuma-pv  # <--- Nome do PV correto
